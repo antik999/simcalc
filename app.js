@@ -12,8 +12,16 @@ const simoronPhrases = [
 ];
 
 function generateSimoron() {
-    const randomNumber = Math.floor(Math.random() * 100) + 1; // Случайное число от 1 до 100
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
     const randomPhrase = simoronPhrases[Math.floor(Math.random() * simoronPhrases.length)];
     const result = document.getElementById("result");
-    result.textContent = `Ваше счастливое число: ${randomNumber}. ${randomPhrase}`;
+    
+    // Убираем предыдущий результат (делаем невидимым)
+    result.classList.remove("show");
+    
+    // Задержка для анимации
+    setTimeout(() => {
+        result.textContent = `Ваше счастливое число: ${randomNumber}. ${randomPhrase}`;
+        result.classList.add("show"); // Показать результат с анимацией
+    }, 100); // Небольшая задержка, чтобы анимация прошла плавно
 }

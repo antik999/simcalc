@@ -27,7 +27,7 @@ function generateSimoron() {
     // Генерируем число с учетом дня недели и длины вопроса
     const randomNumber = (Math.floor(Math.random() * 100) + 1 + dayOfWeek + questionLength) % 100 + 1;
     const randomPhrase = simoronPhrases[Math.floor(Math.random() * simoronPhrases.length)];
-    
+
     const result = document.getElementById("result");
 
     result.classList.remove("show");
@@ -35,6 +35,18 @@ function generateSimoron() {
     setTimeout(() => {
         result.textContent = `Ответ на ваш вопрос "${userQuestion}": Ваше счастливое число: ${randomNumber}. ${randomPhrase}`;
         result.classList.add("show");
+
+        // Показываем ссылки на соцсети
+        const shareLinks = document.getElementById("shareLinks");
+        shareLinks.style.display = 'block';
+
+        // Генерируем ссылки для шаринга
+        const encodedText = encodeURIComponent(`Ответ на мой вопрос "${userQuestion}": счастливое число ${randomNumber}. ${randomPhrase}`);
+        document.getElementById("shareTwitter").href = `https://twitter.com/intent/tweet?text=${encodedText}`;
+        document.getElementById("shareVK").href = `https://vk.com/share.php?title=${encodedText}`;
+        document.getElementById("shareFacebook").href = `https://www.facebook.com/sharer/sharer.php?u=${encodedText}`;
+
     }, 100);
 }
+
 

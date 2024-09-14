@@ -20,4 +20,10 @@ button {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#result.show {
+    opacity: 1;
 }

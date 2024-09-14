@@ -42,7 +42,7 @@ function generateSimoron() {
 
         // Генерируем ссылки для шаринга
         const encodedText = encodeURIComponent(`Ответ на мой вопрос "${userQuestion}": счастливое число ${randomNumber}. ${randomPhrase}`);
-        document.getElementById("shareTwitter").href = `https://twitter.com/intent/tweet?text=${encodedText}`;
+        document.getElementById("shareX").href = `https://x.com/intent/tweet?text=${encodedText}`;
         document.getElementById("shareVK").href = `https://vk.com/share.php?title=${encodedText}`;
         document.getElementById("shareFacebook").href = `https://www.facebook.com/sharer/sharer.php?u=${encodedText}`;
 

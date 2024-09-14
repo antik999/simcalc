@@ -41,10 +41,11 @@ function generateSimoron() {
         shareLinks.style.display = 'block';
 
         // Генерируем ссылки для шаринга
-        const encodedText = encodeURIComponent(`Ответ на мой вопрос "${userQuestion}": счастливое число ${randomNumber}. ${randomPhrase}`);
-        document.getElementById("shareX").href = `https://x.com/intent/tweet?text=${encodedText}`;
-        document.getElementById("shareVK").href = `https://vk.com/share.php?title=${encodedText}`;
-        document.getElementById("shareFacebook").href = `https://www.facebook.com/sharer/sharer.php?u=${encodedText}`;
+const encodedText = encodeURIComponent(`Ответ на мой вопрос "${userQuestion}": счастливое число ${randomNumber}. ${randomPhrase} https://arqe.ru/`);
+document.getElementById("shareX").href = `https://x.com/intent/tweet?text=${encodedText}`;
+document.getElementById("shareVK").href = `https://vk.com/share.php?title=${encodedText}`;
+document.getElementById("shareFacebook").href = `https://www.facebook.com/sharer/sharer.php?u=${encodedText}`;
+document.getElementById("shareOK").href = `https://connect.ok.ru/offer?url=${encodedText}`;
 
     }, 100);
 }

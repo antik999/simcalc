@@ -12,16 +12,21 @@ const simoronPhrases = [
 ];
 
 function generateSimoron() {
+    const userQuestion = document.getElementById("userQuestion").value;
+    
+    if (userQuestion.trim() === "") {
+        alert("Пожалуйста, задайте вопрос!");
+        return;
+    }
+    
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     const randomPhrase = simoronPhrases[Math.floor(Math.random() * simoronPhrases.length)];
     const result = document.getElementById("result");
     
-    // Убираем предыдущий результат (делаем невидимым)
     result.classList.remove("show");
     
-    // Задержка для анимации
     setTimeout(() => {
-        result.textContent = `Ваше счастливое число: ${randomNumber}. ${randomPhrase}`;
-        result.classList.add("show"); // Показать результат с анимацией
-    }, 100); // Небольшая задержка, чтобы анимация прошла плавно
+        result.textContent = `Ответ на ваш вопрос "${userQuestion}": Ваше счастливое число: ${randomNumber}. ${randomPhrase}`;
+        result.classList.add("show");
+    }, 100);
 }

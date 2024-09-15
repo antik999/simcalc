@@ -49,5 +49,3 @@ document.getElementById("shareOK").href = `https://connect.ok.ru/offer?url=${enc
 
     }, 100);
 }
-
-
